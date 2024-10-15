@@ -26,6 +26,7 @@ CpuEmulator::CpuEmulator(/* args */)
 
 CpuEmulator::~CpuEmulator()
 {
+
     std::cout << "Shuting down Cpu Emulator" << std::endl;
 
     for (int i = 0; i < this->memory.size(); i++)
@@ -38,5 +39,12 @@ CpuEmulator::~CpuEmulator()
     {
         this->registers[i] = 0;
     }
-     std::cout << "Registers Erased" << std::endl;
+
+    std::cout << "Registers Erased" << std::endl;
+}
+
+bool CpuEmulator::LoadInstruction(int val)
+{
+    this->InstructionMemory.Push(val);
+    return 1;
 }
